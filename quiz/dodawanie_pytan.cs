@@ -11,9 +11,9 @@ using SQLite;
 
 namespace quiz
 {
-    public partial class Form1 : Form
+    public partial class dodawanie_pytan : Form
     {
-        public Form1()
+        public dodawanie_pytan()
         {
             InitializeComponent();
         }
@@ -28,9 +28,9 @@ namespace quiz
             {
                 var db = new SQLiteConnection(@"D:\visual\projekty\quiz\quiz\test.db");
 
-                db.CreateTable<dbinfo> ();  //tworzy plik
+                db.CreateTable<dbinfo>();  //tworzy plik
 
-                db.Close ();
+                db.Close();
             }
         }
 
@@ -42,7 +42,7 @@ namespace quiz
 
             db.Insert(temp);    //zapis do pliku
 
-            db.Close ();
+            db.Close();
         }
     }
 }
