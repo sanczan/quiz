@@ -9,7 +9,7 @@ using SQLite;
 
 namespace quiz
 {
-    class dbinfo
+    class dbinfo    //stworzenie zmiennych
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
@@ -22,11 +22,17 @@ namespace quiz
         public string odpowiedz_4 { get; set; }
         public string poprawna_odpowiedz { get; set; }
 
-        public dbinfo() { }
+        public dbinfo() { }     //funkcja 'pusta'
 
-        public dbinfo(string n_q)
+        public dbinfo(string n_q)   //w zaleznosci ile poda sie argumentow, to taka funkcja sie wykona
         {
             nazwa_quizu = n_q;
+        }
+
+        public dbinfo(string o1, string o2)
+        {
+            odpowiedz_1 = o1;
+            odpowiedz_2 = o2;
         }
 
 

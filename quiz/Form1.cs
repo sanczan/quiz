@@ -18,9 +18,9 @@ namespace quiz
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //tworzenie pliku w zeleznosci czy istniej czy tez nie
         {
-            if (System.IO.File.Exists(@"D:\visual\projekty\quiz\quiz\test.db"))
+            if (System.IO.File.Exists(@"D:\visual\projekty\quiz\quiz\test.db")) //moja sciezka na dysku
             {
                 //nic nie rob
             }
@@ -28,7 +28,7 @@ namespace quiz
             {
                 var db = new SQLiteConnection(@"D:\visual\projekty\quiz\quiz\test.db");
 
-                db.CreateTable<dbinfo> ();
+                db.CreateTable<dbinfo> ();  //tworzy plik
 
                 db.Close ();
             }
@@ -36,11 +36,11 @@ namespace quiz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dbinfo temp = new dbinfo(pytanie.Text);
+            dbinfo temp = new dbinfo(odpowiedz_pierwsza.Text, odpowiedz_druga.Text);    //zbiera dane z pierwszego i drugiego pola
 
             var db = new SQLiteConnection(@"D:\visual\projekty\quiz\quiz\test.db");
 
-            db.Insert(temp);
+            db.Insert(temp);    //zapis do pliku
 
             db.Close ();
         }
