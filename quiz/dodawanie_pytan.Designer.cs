@@ -45,11 +45,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(499, 87);
+            this.label6.Location = new System.Drawing.Point(391, 95);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 13);
+            this.label6.Size = new System.Drawing.Size(397, 13);
             this.label6.TabIndex = 23;
-            this.label6.Text = "na razie dziala tylko odp 1 i 2 pez pytania xD";
+            this.label6.Text = "na razie dziala tylko odp 1 i 2 pez pytania xD (pewnie to juz nawet i teraz nie d" +
+    "ziala)";
             // 
             // label5
             // 
@@ -143,7 +144,7 @@
             this.pytanie.Size = new System.Drawing.Size(100, 20);
             this.pytanie.TabIndex = 12;
             // 
-            // Form2
+            // dodawanie_pytan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,7 +161,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.odpowiedz_pierwsza);
             this.Controls.Add(this.pytanie);
-            this.Name = "Form2";
+            this.Name = "dodawanie_pytan";
             this.Text = "dodawanie_pytań";
             this.ResumeLayout(false);
             this.PerformLayout();
