@@ -87,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbinfo.cs" />
+    <Compile Include="edycja_pytan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edycja_pytan.Designer.cs">
+      <DependentUpon>edycja_pytan.cs</DependentUpon>
+    </Compile>
     <Compile Include="wybor_quizu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="edycja_pytan.resx">
+      <DependentUpon>edycja_pytan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wybor_quizu.resx">
       <DependentUpon>wybor_quizu.cs</DependentUpon>
     </EmbeddedResource>

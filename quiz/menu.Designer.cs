@@ -60,6 +60,7 @@
             this.button_edytuj_quiz.TabIndex = 2;
             this.button_edytuj_quiz.Text = "Edytuj quiz";
             this.button_edytuj_quiz.UseVisualStyleBackColor = true;
+            this.button_edytuj_quiz.Click += new System.EventHandler(this.button_edytuj_quiz_Click);
             // 
             // menu
             // 
