@@ -45,7 +45,7 @@ namespace quiz
         private void button_edytuj_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new dodawanie_pytan().Show();
+            new edycja_pytan().Show();
         }
     }
 }
