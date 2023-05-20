@@ -20,6 +20,12 @@ namespace quiz
 
         private void stworz_quiz_Click(object sender, EventArgs e)
         {
+            //this.Hide();
+            //new wybor_quizu().Show(); 
+        }
+
+        private void button_edytuj_quiz_Click(object sender, EventArgs e)
+        {
             this.Hide();
             new wybor_quizu().Show(); 
         }
