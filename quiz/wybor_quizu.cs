@@ -16,12 +16,13 @@ namespace quiz
 {
     public partial class wybor_quizu : Form
     {
-        public static string nazwa_quizu = "";
+        public static string nazwa_quizu = "";  //zmienna w celu przekazania nazwy guizu do innego formsa
         public wybor_quizu()
         {
             InitializeComponent();
         }
 
+        //-------------------------------------wypelnienie comboboxa zapytaniem---------------------------
         private void wybór_quizu_Load(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=D:\visual\projekty\quiz\quiz\quizy_database.db;Version=3;"; //dostanie sie do pliku .db
@@ -43,12 +44,16 @@ namespace quiz
 
         }
 
+
+        //----------------------przejscie do nastepnego forma
         private void button_edytuj_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new edycja_pytan().Show();
+            this.Hide();    //ukrycie aktualnego formularza
+            new edycja_pytan().Show();  //pokazanie wybranego formularza
         }
 
+
+        //-----------------------------przypisanie aktualnego elementu comboboxa do zmiennej-------------------------
         private void combobox_wybor_quizu_SelectedValueChanged(object sender, EventArgs e)
         {
             nazwa_quizu = combobox_wybor_quizu.Text;
