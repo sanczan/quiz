@@ -63,7 +63,11 @@ namespace quiz
             {
                 connection.Open();
 
-                string query = "SELECT id_pytanie from pytania";   //sformuowanie zapytania
+                string nazwa = wybor_quizu.nazwa_quizu;
+
+                string query = "SELECT pytania.tresc from pytania INNER JOIN quizy ON pytania.id_quiz = quizy.id_quiz WHERE quizy.nazwa='"+ nazwa + "'";   //sformuowanie zapytania
+
+                //select pytania.tresc from pytania INNER JOIN quizy ON pytania.id_quiz = quizy.id_quiz WHERE quizy.nazwa ="Quiz 1";
 
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 
@@ -71,7 +75,7 @@ namespace quiz
 
                 while (reader.Read())
                 {
-                    string name = reader.GetInt32(0).ToString();
+                    string name = reader.GetString(0);
                     comboBox_edycja_pytania.Items.Add(name);
                 }
                 
@@ -87,7 +91,7 @@ namespace quiz
             {
                 connection.Open();
 
-                string query = "SELECT tresc, odp_1, odp_2, odp_3, odp_4 from pytania where id_pytanie='" + comboBox_edycja_pytania.SelectedItem+"'";   //sformuowanie zapytania
+                string query = "SELECT id_pytanie, odp_1, odp_2, odp_3, odp_4 from pytania where tresc='" + comboBox_edycja_pytania.SelectedItem+"'";   //sformuowanie zapytania
 
                 SQLiteCommand command = new SQLiteCommand(query, connection);
 
@@ -95,13 +99,13 @@ namespace quiz
 
                 while (reader.Read())
                 {
-                    string polecenie = reader.GetString(0);
+                    string id = reader.GetInt32(0).ToString();
                     string odp1 = reader.GetString(1);
                     string odp2 = reader.GetString(2);
                     string odp3 = reader.GetString(3);
                     string odp4 = reader.GetString(4);
+                    
 
-                    textBox_tresc.Text = polecenie;
                     odpowiedz_pierwsza.Text = odp1;
                     odpowiedz_druga.Text = odp2;
                     odpowiedz_trzecia.Text = odp3;
