@@ -40,6 +40,7 @@
             this.combobox_wybor_quizu.Name = "combobox_wybor_quizu";
             this.combobox_wybor_quizu.Size = new System.Drawing.Size(270, 21);
             this.combobox_wybor_quizu.TabIndex = 0;
+            this.combobox_wybor_quizu.SelectedValueChanged += new System.EventHandler(this.combobox_wybor_quizu_SelectedValueChanged);
             // 
             // label1
             // 

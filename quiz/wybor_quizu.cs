@@ -16,6 +16,7 @@ namespace quiz
 {
     public partial class wybor_quizu : Form
     {
+        public static string nazwa_quizu = "";
         public wybor_quizu()
         {
             InitializeComponent();
@@ -46,6 +47,11 @@ namespace quiz
         {
             this.Hide();
             new edycja_pytan().Show();
+        }
+
+        private void combobox_wybor_quizu_SelectedValueChanged(object sender, EventArgs e)
+        {
+            nazwa_quizu = combobox_wybor_quizu.Text;
         }
     }
 }
