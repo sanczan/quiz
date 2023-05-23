@@ -1,0 +1,36 @@
+﻿<Page x:Class="RozwiazywanieQuizu.View.QuizView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RozwiazywanieQuizu.View"
+        Title="Quiz App" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Quizzes}" SelectedItem="{Binding SelectedQuiz}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding QuizTitle}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Column="1" Content="Display Questions" Command="{Binding DisplayQuestionsCommand}" />
+        <ListBox Grid.Column="1" Margin="10" ItemsSource="{Binding Questions}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding QuestionText}" FontWeight="Bold" />
+                        <ItemsControl ItemsSource="{Binding AnswerOptions}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton Content="{Binding}" GroupName="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=ItemsSource}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>
